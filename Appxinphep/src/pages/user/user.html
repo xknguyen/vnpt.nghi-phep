@@ -1,0 +1,54 @@
+<ion-header  >
+  <ion-navbar color="hg">
+    <ion-title>
+      Xin chào {{data.HoTen}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="spacer" style="width: 300px; height: 23px;"></div>
+  <a class="mauh4">Lịch làm việc tuần {{tuan}} của <b>{{data.HoTen}}</b></a>
+    <div>
+      <ion-grid class="bang">
+        <ion-row>
+          <ion-col class ="col10">
+            <b>Thứ (Ngày)</b>
+          </ion-col>
+          <ion-col class ="col10">
+            <b>Buổi dự kiến</b>
+          </ion-col>
+          <ion-col class ="col10">
+            <b>Điểm danh</b>
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngFor="let item of dataDuKien">
+          <ion-col  class='{{item.Color}}' style="width: 33.3%;">
+           <b class="col11 {{item.Color}}"> Thứ {{item.Thu}}</b> <b >({{item.Ngay}} - {{item.Thang}})</b>
+          </ion-col>
+          <ion-col class="col12 {{item.Color}}" style="width: 33.3%;">
+            <b>{{getName(item.Buoi)}}</b>
+          </ion-col>
+          <ion-col class="col13 {{item.Color}}" style="width: 33.3%;">
+           <b> {{item.Diem}}</b>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+      
+    <div>
+      <a button class="btdiemdanh" ion-button icon-start (click)="DiemDanh()">
+        <ion-icon name="create"></ion-icon>
+         Điểm danh
+      </a>
+      
+      <a button class="btnghiphep" ion-button icon-end  (click)="Xinnghi()">
+        <ion-icon name="pulse"></ion-icon>
+        Nghỉ phép
+      </a>
+      <a button class="tbnv" ion-button icon-end  (click)="ThongBaoNV()">
+        <ion-icon name="information-circle"></ion-icon>
+        Thông báo
+      </a>
+    </div> 
+</ion-content>

@@ -1,0 +1,77 @@
+page-login {
+	ion-title * {
+		margin-top: 30vh;
+		margin-bottom: 5vh;
+	}
+	.toolbar-title-md{
+	color:tan;
+	font-size: 3rem;
+	}
+input {
+  margin: 40px 25px;
+  width: 290px;
+  display: block;
+  padding: 10px 0;
+  border-bottom: solid 1px #1abc9c;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+}
+input:focus, input:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+  color: rgb(143,143,143);
+  font-size: 14px;
+  transform: translateX(0px);
+  visibility: visible !important;
+}
+ 
+button {
+  border: none;
+  margin: 20px auto 0;
+  background: #1abc9c;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 10px;
+  width: 300px;
+  color: white;
+  margin-left: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    font-size: 16px;
+    font-size: 16px;
+    border: none;
+    width:300px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.button {
+    padding: 0.625em 1.875em;
+    display: inline-block;
+    border: 1px solid rgb(143,143,143);
+    background-color: rgb(143,143,143);
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.button.login::before {
+    content: "";
+    width: 1em;
+    margin-left: 90px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('login.png');
+    background-size: contain; }
+    }

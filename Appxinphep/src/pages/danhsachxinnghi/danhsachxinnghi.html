@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="hg">
+      <ion-title>Danh sách xin nghỉ</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="img">
+    <ion-list >
+    <ion-fab bottom center #fab>
+            <button ion-fab (click)="refresh(fab)"> 
+                <ion-icon name="refresh"></ion-icon>       
+            </button>
+        </ion-fab>
+        <button class ="imga" ion-item *ngFor="let item of dataXP" (click)="btchitietnghiphep(item.MaXP)"> 
+            <ion-icon name='{{getIcon(item.DaXem)}}' item-start ></ion-icon>
+            {{item.HoTen}}
+            <div class="item-note" item-end >
+              {{item.NgayXP}}
+            </div>
+          </button>
+    </ion-list>
+  </ion-content>

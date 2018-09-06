@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="hg" >
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding center text-center>
+  <ion-title><h3 class="tde">Nghỉ phép</h3></ion-title>
+  <ion-list>
+    <ion-item >
+      <ion-label >Chọn ngày:</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="ngayxinphep" placeholder="Chọn ngày"></ion-datetime>
+    </ion-item>
+      <ion-item>
+    <ion-label>Buổi</ion-label>
+    <ion-select [(ngModel)]="buoi" placeholder="Chọn buổi">
+      <ion-option value="sa">Sáng</ion-option>
+      <ion-option value="ch">Chiều</ion-option>
+      <ion-option value="cn">Cả ngày</ion-option>
+    </ion-select>
+  </ion-item>
+    <ion-item>
+        <ion-label>Lý do nghỉ:</ion-label>
+       <ion-textarea rows="3" maxLength="250"  placeholder="Lý do nghỉ" type="text" [(ngModel)]="lydo"></ion-textarea >
+    </ion-item>
+  </ion-list>
+  <button style="background-color :rgb(141,185,169); " ion-button round (click)="Send()">Xin phép</button>
+</ion-content>

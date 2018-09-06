@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DiemDanh">
+    <Key>
+      <PropertyRef Name="MaDD" />
+    </Key>
+    <Property Name="MaDD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaDuKien" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngay" Type="date" />
+    <Property Name="Buoi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DuKienTT">
+    <Key>
+      <PropertyRef Name="MaDuKien" />
+    </Key>
+    <Property Name="MaDuKien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaUser" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="Thu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngay" Type="nvarchar" MaxLength="50" />
+    <Property Name="Thang" Type="nvarchar" MaxLength="50" />
+    <Property Name="Buoi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaUser" />
+    </Key>
+    <Property Name="MaUser" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenTaiKhoan" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaQuyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="NienKhoa" Type="nvarchar" MaxLength="50" />
+    <Property Name="BatDau" Type="date" />
+  </EntityType>
+  <EntityType Name="ThongBao">
+    <Key>
+      <PropertyRef Name="MaTB" />
+    </Key>
+    <Property Name="MaTB" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="250" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="500" />
+    <Property Name="NgayBatDau" Type="date" />
+    <Property Name="NgayKetThuc" Type="date" />
+    <Property Name="MaUser" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayTao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="XinPhep">
+    <Key>
+      <PropertyRef Name="MaXP" />
+    </Key>
+    <Property Name="MaXP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaDuKien" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayTao" Type="date" />
+    <Property Name="Buoi" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="250" />
+    <Property Name="DaXem" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="AppModelStoreContainer">
+    <EntitySet Name="DiemDanh" EntityType="Self.DiemDanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DuKienTT" EntityType="Self.DuKienTT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThongBao" EntityType="Self.ThongBao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="XinPhep" EntityType="Self.XinPhep" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

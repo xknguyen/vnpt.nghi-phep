@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color ="hg">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lịch và danh sách điểm danh</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="imga">
+  <ion-list  >
+    <ion-item class ="img"style="color :rgb(153, 0, 77) " *ngFor="let item of employee">
+      {{item.HoTen}}
+      <button  ion-button round class="btdangki" ion-button icon-start (click)="btdangkidiemdanh(item.MaUser)">Dự kiến và Điểm danh</button>
+      </ion-item>
+  </ion-list>
+</ion-content>

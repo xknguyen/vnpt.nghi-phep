@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DiemDanhs" EntityType="AppModel.DiemDanh" />
+    <EntitySet Name="DuKienTTs" EntityType="AppModel.DuKienTT" />
+    <EntitySet Name="TaiKhoans" EntityType="AppModel.TaiKhoan" />
+    <EntitySet Name="ThongBaos" EntityType="AppModel.ThongBao" />
+    <EntitySet Name="XinPheps" EntityType="AppModel.XinPhep" />
+  </EntityContainer>
+  <EntityType Name="DiemDanh">
+    <Key>
+      <PropertyRef Name="MaDD" />
+    </Key>
+    <Property Name="MaDD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaDuKien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ngay" Type="DateTime" Precision="0" />
+    <Property Name="Buoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DuKienTT">
+    <Key>
+      <PropertyRef Name="MaDuKien" />
+    </Key>
+    <Property Name="MaDuKien" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Thu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ngay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Thang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Buoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaUser" />
+    </Key>
+    <Property Name="MaUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenTaiKhoan" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaQuyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NienKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BatDau" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="ThongBao">
+    <Key>
+      <PropertyRef Name="MaTB" />
+    </Key>
+    <Property Name="MaTB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TieuDe" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
+    <Property Name="MaUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="XinPhep">
+    <Key>
+      <PropertyRef Name="MaXP" />
+    </Key>
+    <Property Name="MaXP" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaDuKien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayTao" Type="DateTime" Precision="0" />
+    <Property Name="Buoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LyDo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DaXem" Type="Boolean" />
+  </EntityType>
+</Schema>

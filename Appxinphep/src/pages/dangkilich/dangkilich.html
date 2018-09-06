@@ -1,0 +1,77 @@
+<ion-header>
+
+  <ion-navbar color="hg">
+    <ion-title>Đăng ký lịch dự kiến cho {{data.HoTen}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div class="spacer" style="width: 300px; height: 23px;"></div>
+  <div><h4>Tuần:</h4> </div>
+  <ion-item >
+    <ion-label>Chọn tuần</ion-label>
+    <ion-select [(ngModel)]="tuan">
+      <ion-option value="1">1</ion-option>
+      <ion-option value="2">2</ion-option>
+      <ion-option value="3">3</ion-option>
+      <ion-option value="4">4</ion-option>
+      <ion-option value="5">5</ion-option>
+      <ion-option value="6">6</ion-option>
+      <ion-option value="7">7</ion-option>
+      <ion-option value="8">8</ion-option>
+      <ion-option value="9">9</ion-option>
+    </ion-select>
+  </ion-item>
+  <div class="spacer" style="width: 300px; height: 23px;"></div>
+    <div>
+      <ion-item>
+        <ion-label>Thứ 2</ion-label>
+        <ion-select [(ngModel)]="t2">
+          <ion-option value="sang">Sáng</ion-option>
+          <ion-option value="chieu">Chiều</ion-option>
+          <ion-option value="cangay">Cả ngày</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thứ 3</ion-label>
+        <ion-select [(ngModel)]="t3">
+          <ion-option value="sang">Sáng</ion-option>
+          <ion-option value="chieu">Chiều</ion-option>
+          <ion-option value="cangay">Cả ngày</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thứ 4</ion-label>
+        <ion-select [(ngModel)]="t4">
+          <ion-option value="sang">Sáng</ion-option>
+          <ion-option value="chieu">Chiều</ion-option>
+          <ion-option value="cangay">Cả ngày</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thứ 5</ion-label>
+        <ion-select [(ngModel)]="t5">
+          <ion-option value="sang">Sáng</ion-option>
+          <ion-option value="chieu">Chiều</ion-option>
+          <ion-option value="cangay">Cả ngày</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Thứ 6</ion-label>
+        <ion-select [(ngModel)]="t6">
+          <ion-option value="sang">Sáng</ion-option>
+          <ion-option value="chieu">Chiều</ion-option>
+          <ion-option value="cangay">Cả ngày</ion-option>
+        </ion-select>
+      </ion-item>
+        
+    </div>
+    <div>
+        <button ion-button round class="bttt" (click)="bttieptuc()">Tiếp tục</button>
+    </div>
+</ion-content>

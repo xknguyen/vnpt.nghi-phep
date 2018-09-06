@@ -1,0 +1,94 @@
+<ion-header>
+
+  <ion-navbar color="hg">
+    <ion-title>Lịch dự kiến và lịch điểm danh</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-fab bottom center #fab>
+            <button ion-fab (click)="refresh(fab)"> 
+                <ion-icon name="refresh"></ion-icon>       
+            </button>
+        </ion-fab>
+    <h2 ion-text class="text-primary">
+        <strong class="hear">Lịch dự kiến</strong>
+      </h2>
+  <div class="spacer" style="width: 300px; height: 23px;"></div>
+    <div>
+      <ion-grid class="bang">
+        <ion-row class="row1">
+          <ion-col class ="col">
+            <b>Tuần</b>
+          </ion-col>
+          <ion-col id ="col">
+            <b> Thứ Hai</b>
+          </ion-col>
+          <ion-col id ="col">
+            <b>Thứ Ba</b>
+          </ion-col>
+          <ion-col id ="col">
+            <b>Thứ Tư</b>
+          </ion-col>
+          <ion-col id ="col">
+            <b>Thứ Năm</b>
+          </ion-col>
+          <ion-col id ="col">
+            <b>Thứ Sáu</b>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let item of listDK">
+          <ion-col class ="col3">
+            {{item.Tuan}}
+          </ion-col>
+          <ion-col class="col4" *ngFor="let it of item.da" >
+           <b class="col5">({{it.Ngay}}/{{it.Thang}})</b><br/>{{getBuoi(it.Buoi)}}
+          </ion-col>
+        </ion-row>
+</ion-grid>
+</div>
+<h2 ion-text class="text-primary">
+        <strong class="hear">Lịch điểm danh</strong>
+      </h2>
+
+      <ion-label class="colormau">-Tổng số buổi đi: {{diemdanh}} </ion-label>
+      <br>
+      <ion-label class="colormau">-Tổng số buổi nghỉ: {{tongphep}} </ion-label>
+      <br>
+      <ion-label class="colormau">-Tổng số buổi TT: {{tongBuoi}}</ion-label>
+  <div class="spacer" style="width: 300px; height: 23px;"></div>
+  <div>
+      <ion-grid class="bang">
+        <ion-row class="row1">
+          <ion-col style="width: 15%">
+            <b>Tuần</b>
+          </ion-col>
+          <ion-col class ="col1">
+            <b>Thứ 2</b>
+          </ion-col>
+          <ion-col class ="col1">
+            <b>Thứ 3</b>
+          </ion-col>
+          <ion-col class ="col1">
+            <b>Thứ 4</b>
+          </ion-col>
+          <ion-col class ="col1">
+            <b>Thứ 5</b>
+          </ion-col>
+          <ion-col class ="col1">
+            <b>Thứ 6</b>
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngFor="let item of listXP">
+            <ion-col class="col3" style="width: 15%">
+              {{item.Tuan}}
+            </ion-col>
+            <ion-col *ngFor="let it of item.da" class="col1 {{it.Color}}" style="width: 16.6%">
+           <b class="col6">  ({{it.Ngay}}/{{it.Thang}})</b><br/><b class="col7">{{it.Diem}}</b>
+            </ion-col>
+          </ion-row>
+</ion-grid>
+</div>
+</ion-content>

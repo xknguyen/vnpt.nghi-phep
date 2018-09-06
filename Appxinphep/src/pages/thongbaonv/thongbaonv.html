@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="hg">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Danh sách thông báo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of dataR" (click)="itemTapped(item.MaTB)">
+      {{item.TieuDe}}
+      <div class="item-note" item-end>
+        {{item.NgayTao}}
+      </div>
+    </button>
+  </ion-list>
+
+</ion-content>
+
